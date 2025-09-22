@@ -35,7 +35,7 @@ class _WelcomePageState extends State<WelcomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('The Second Source'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.redAccent,
         centerTitle: true,
       ),
       body: Padding(
@@ -57,11 +57,7 @@ class _WelcomePageState extends State<WelcomePage> {
               ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: showWelcome,
-              child: Text('Submit'),
-            ),
-            
+            ElevatedButton(onPressed: showWelcome, child: Text('Submit')),
           ],
         ),
       ),
