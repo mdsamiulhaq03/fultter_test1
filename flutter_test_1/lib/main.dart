@@ -34,8 +34,8 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('The Second Source'),
-        backgroundColor: Colors.redAccent,
+        title: const Text('The Second Source'),
+        backgroundColor: const Color.fromARGB(255, 243, 139, 139),
         centerTitle: true,
       ),
       body: Padding(
@@ -44,12 +44,13 @@ class _WelcomePageState extends State<WelcomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Card(
+              color: const Color.fromARGB(255, 207, 228, 243),
               elevation: 3,
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: TextField(
                   controller: nameController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Enter your name',
                     border: OutlineInputBorder(),
                   ),
@@ -57,7 +58,17 @@ class _WelcomePageState extends State<WelcomePage> {
               ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(onPressed: showWelcome, child: Text('Submit')),
+            ElevatedButton(onPressed: showWelcome, child: const Text('Submit')),
+            const SizedBox(height: 20),
+            if (welcomeText.isNotEmpty)
+              Text(
+                welcomeText,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
           ],
         ),
       ),
